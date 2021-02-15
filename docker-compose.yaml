@@ -1,0 +1,16 @@
+version: "2"
+services:
+  virtual-scribe:
+    build: .
+    image: capgemini-invent-ide/virtual-scribe
+    container_name: virtual-scribe
+    ports:
+      - "5555:5555"
+  mkdocs:
+    build: ./docs
+    image: capgemini-invent-ide/virtual-scribe-mkdocs
+    container_name: virtual-scribe-mkdocs
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/docs

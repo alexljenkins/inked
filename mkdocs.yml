@@ -1,0 +1,51 @@
+site_name: "Virtual Scribe"
+site_description: "Evolving repo of the Virtual Scribe"
+site_url: "https://CapgeminiInventIDE.github.io/VirtualScribe"
+repo_url: "https://github.com/CapgeminiInventIDE/VirtualScribe"
+repo_name: "CapgeminiInventIDE/VirtualScribe"
+
+nav:
+  - Welcome: index.md
+  - Reference:
+      Character: reference/character.md
+  - Contributing: contributing.md
+  - Code of Conduct: code_of_conduct.md
+  - Changelog: changelog.md
+  - License: license.md
+  - About Us: about_us.md
+  
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/imgs/index.png
+  favicon: assets/imgs/favicon.png
+  palette:
+    scheme: capgemini
+
+extra_css:
+  - assets/css/styles.css
+
+extra_javascript:
+  - assets/js/theme.js
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed
+  - toc:
+      permalink: "¤"
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+
+plugins:
+  - search
+  - macros:
+      include_yaml:
+        - data/social.yaml
