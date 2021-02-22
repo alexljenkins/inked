@@ -1,3 +1,4 @@
+import os
 import base64
 import io
 import logging
@@ -30,7 +31,9 @@ def pil_2_base64(image: Image.Image) -> str:
 async def typesetter(request: Request):
     """Demo UI for the post router
     """
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(
+        "index.html", {"request": request, "HOST": os.environ.get("TYPESETTER_HOST", "http://0.0.0.0:5555")}
+    )
 
 
 @router.post("/", description="Produces an image for the given text and configuration")

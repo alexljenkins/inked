@@ -8,6 +8,7 @@ services:
       - "5555:5555"
     environment:
       - PORT=5555
+    entrypoint: typesetter-demo
   mkdocs:
     build: ./docs
     image: capgemini-invent-ide/virtual-scribe-mkdocs

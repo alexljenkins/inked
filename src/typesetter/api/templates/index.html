@@ -44,7 +44,7 @@
         input.onkeyup = () => {
             word = input.value;
             if (word === "") return;
-            fetch("http://0.0.0.0:5555/typesetter/?word=" + word, {
+            fetch("{{HOST}}/typesetter/?word=" + word, {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
