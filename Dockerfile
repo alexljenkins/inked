@@ -9,3 +9,4 @@ ADD . /opt/package
 
 RUN pip install .[demo]
 
+ENTRYPOINT ["typesetter-demo"]
