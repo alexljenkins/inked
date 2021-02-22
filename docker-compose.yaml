@@ -6,6 +6,7 @@ services:
     container_name: virtual-scribe
     ports:
       - "5555:5555"
+    entrypoint: typesetter-demo
   mkdocs:
     build: ./docs
     image: capgemini-invent-ide/virtual-scribe-mkdocs
