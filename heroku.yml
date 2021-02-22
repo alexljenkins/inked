@@ -1,5 +1,5 @@
 build:
   docker:
     web: Dockerfile
-  run:
-    web: typesetter-demo
+run:
+  web: typesetter-demo
