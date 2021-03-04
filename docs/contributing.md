@@ -1,6 +1,6 @@
 # Contributing
 
-If you would like to make any contributions to the VirtualScribe, you may do so by submitting a pull request to the [VirtualScribe repository](https://github.com/CapgeminiInventIDE/VirtualScribe):
+If you would like to make any contributions to the inked, you may do so by submitting a pull request to the [inked repository](https://github.com/CapgeminiInventIDE/inked):
 
 1. Fork the repository
 2. Create a branch in your own fork: `git checkout -b <branch_name>`.

@@ -1,18 +1,20 @@
 version: "2"
 services:
-  virtual-scribe:
+  inked:
     build: .
-    image: capgemini-invent-ide/virtual-scribe
-    container_name: virtual-scribe
+    image: capgemini-invent-ide/inked
+    container_name: inked
     ports:
-      - "5555:5555"
+      - 5552:5552
+    volumes:
+      - .:/opt/working
+    entrypoint: inked-demo
     environment:
-      - PORT=5555
-    entrypoint: typesetter-demo
-  mkdocs:
+      - INKED_HOST=http://localhost:5552
+  mkdocs-inked:
     build: ./docs
-    image: capgemini-invent-ide/virtual-scribe-mkdocs
-    container_name: virtual-scribe-mkdocs
+    image: capgemini-invent-ide/inked-mkdocs
+    container_name: inked-mkdocs
     ports:
       - "8000:8000"
     volumes:

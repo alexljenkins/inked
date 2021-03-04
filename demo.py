@@ -1,18 +1,23 @@
 import time
-from pathlib import Path
+import typer
+import numpy as np
 import concurrent.futures
 
-import typer
+from pathlib import Path
 from PIL import Image
 from tqdm import tqdm
 
-from src.typesetter import WordGenerator, CharDict, RandomSpacer, FixedSpacer
-from src.typesetter.lmdb_ctx import LMDBMaker
+from src.inked import WordGenerator, CharDict, RandomSpacer, FixedSpacer, Augmentor
+from src.inked.lmdb_ctx import LMDBMaker
+
+# np.random.seed(42)
 
 
-def main(n_words: int = 1000):
-
-    factory = WordGenerator(augmentor=None, warehouses=["lmdb", "fonts"])
+def main(n_words: int = 1):
+    augmentor = Augmentor()
+    factory = WordGenerator(
+        augmentor=augmentor, warehouses=["cursive", "fonts", "block"], block_dataset_size="sml"
+    )  # 'cursive'
     char_dict = CharDict(
         distribution={"english_words": 0.1, "google_words": 0.6, "additional_words": 0.3,},
         possible_chars=factory.chargen.possible,
@@ -22,19 +27,18 @@ def main(n_words: int = 1000):
     # with LMDBMaker(Path("LMDB")) as lmdb:
     #     for _ in tqdm(range(n_words)):
     #         rand_word = char_dict[char_dict.random_char]
-    #         word_image = factory.generate("abc", augment_word=True, spacer=RandomSpacer(0))
-    #         lmdb.append(word_image.text, word_image.encode())
+    #         word = factory.generate(rand_word, augment_word=True, spacer=RandomSpacer(0))
+    #         lmdb.append(word.text, word.image.encode())
 
     # NORMAL
     st = time.time()
-    for _ in tqdm(range(n_words)):
-        try:
-            r_char = char_dict.random_char
-            rand_word = char_dict["a"]
-            word_image = factory.generate("a", augment_word=True, spacer=RandomSpacer(0))
-            word_image.save("demo.png")
-        except KeyError:
-            print(f"Character {r_char} is not available in any of the dictionaries")
+    for i in tqdm(range(n_words)):
+        char = char_dict.random_char
+        rand_word = char_dict[char]
+        # word = factory.generate("SpaceX", augment_word=True, spacer=FixedSpacer(0))
+        word = factory.generate_cursive("hello", augment_word=True)
+        word.save("demo.png")
+
     print(time.time() - st)
 
 

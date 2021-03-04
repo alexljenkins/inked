@@ -1,0 +1,32 @@
+[
+    {
+        "object": "Character",
+        "min_augments": 1,
+        "max_augments": 99,
+        "augments": [
+            { "name": "rotation", "enabled": true, "min_severity": -15, "max_severity": 15 },
+            { "name": "scale_x", "enabled": true, "min_severity": 0.9, "max_severity": 1.1 },
+            { "name": "scale_y", "enabled": true, "min_severity": 0.9, "max_severity": 1.1 },
+            { "name": "text_fill", "enabled": true, "min_severity": [0,0,0], "max_severity": [255,255,255] },
+            { "name": "text_texture", "enabled": true, "min_severity": 99, "max_severity": 99 }
+        ]
+    },
+    {
+        "object": "Word",
+        "min_augments": 1,
+        "max_augments": 99,
+        "augments": [
+            { "name": "rotation", "enabled": true, "min_severity": -3, "max_severity": 3 },
+            { "name": "xblur", "enabled": true, "min_severity": 1, "max_severity": 2 },
+            { "name": "yblur", "enabled": true, "min_severity": 1, "max_severity": 2 },
+            {
+                "name": "bg_image",
+                "enabled": true,
+                "min_severity": 99,
+                "max_severity": 99
+            },
+            { "name": "bg_colour", "enabled": true, "min_severity": 0.1, "max_severity": 0.4 },
+            { "name": "random_pixel_noise", "enabled": true, "min_severity": 0.005, "max_severity": 0.03 }
+        ]
+    }
+]

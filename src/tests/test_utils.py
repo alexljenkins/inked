@@ -1,12 +1,8 @@
-import random
-
 import numpy as np
 import pytest
 from PIL import Image
 
-from ..typesetter.utils import white_to_transparent
-
-random.seed(1)
+from ..inked.utils import white_to_transparent
 
 ALL_WHITE = np.ones((3, 3, 3), dtype=np.uint8) * 255
 

@@ -1,7 +1,7 @@
 Mozilla Public License Version 2.0
 ==================================
 
-Copyright (c) 2020, Capgemini Invent IDE
+Copyright (c) 2021, Capgemini Invent IDE
 All rights reserved.
 
 1. Definitions

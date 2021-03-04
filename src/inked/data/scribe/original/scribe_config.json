@@ -1,0 +1,14 @@
+[
+    {
+        "object": "Scribe",
+        "model_path": "./models/best_model_synthesis.pt",
+        "data_path": "./data/",
+        "save_path": "./results/",
+        "seq_len": 400, 
+        "batch_size": 1, 
+        "bias": 10.0, 
+        "prime": "False", 
+        "train_mean": 0.0,
+        "train_std": 1.0
+    }
+]

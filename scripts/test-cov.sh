@@ -3,4 +3,4 @@
 set -e
 set -x
 
-bash scripts/test.sh --cov=src/typesetter --cov-report html ${@} # --cov=src/api
+bash scripts/test.sh --cov=src/inked --cov-report html ${@} # --cov=src/api

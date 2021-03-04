@@ -1,14 +1,11 @@
-import random
 from pathlib import Path
 
 import numpy as np
 from PIL import Image
 from truth.truth import AssertThat
 
-from ..typesetter.augmentor import Augmentor
-from ..typesetter.character import Character, FixedSpacer, RandomSpacer, Word
-
-random.seed(1)
+from ..inked.augmentor import Augmentor
+from ..inked.character import Character, FixedSpacer, RandomSpacer, Word
 
 IMG_CHAR = np.ones((32, 32, 4), dtype=np.uint8) * 255
 IMG_WORD = np.ones((32, 64, 4), dtype=np.uint8) * 255

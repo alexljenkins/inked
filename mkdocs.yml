@@ -1,8 +1,8 @@
-site_name: "Virtual Scribe"
-site_description: "Evolving repo of the Virtual Scribe"
-site_url: "https://CapgeminiInventIDE.github.io/VirtualScribe"
-repo_url: "https://github.com/CapgeminiInventIDE/VirtualScribe"
-repo_name: "CapgeminiInventIDE/VirtualScribe"
+site_name: "inked"
+site_description: "Evolving repo of the inked"
+site_url: "https://CapgeminiInventIDE.github.io/inked"
+repo_url: "https://github.com/CapgeminiInventIDE/inked"
+repo_name: "CapgeminiInventIDE/inked"
 
 nav:
   - Welcome: index.md

@@ -1,3 +1,3 @@
-# VirtualScribe
+# inked
 
 ## Getting Started

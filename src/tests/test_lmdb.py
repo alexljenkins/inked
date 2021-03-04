@@ -1,18 +1,15 @@
-import random
 from pathlib import Path
 
 import lmdb
 
-from ..typesetter import RandomSpacer, WordGenerator
-from ..typesetter.lmdb_ctx import LMDBMaker
-
-random.seed(1)
+from ..inked import RandomSpacer, WordGenerator
+from ..inked.lmdb_ctx import LMDBMaker
 
 
 def test_lmdb():
     lmdb_path = Path("/tmp/TESTING-LMDB/")
     number_words = 1005
-    factory = WordGenerator(augmentor=None, warehouses=["lmdb", "fonts"])
+    factory = WordGenerator(augmentor=None, warehouses=["block", "fonts"])
 
     # create images and save to lmdb
     with LMDBMaker(Path(lmdb_path)) as mdb:
