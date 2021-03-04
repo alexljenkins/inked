@@ -5,6 +5,7 @@
 
 *.mdb
 .DS_Store
+TODO.md
 
 .vscode/*
 .coverage
