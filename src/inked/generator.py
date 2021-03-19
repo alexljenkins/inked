@@ -202,7 +202,7 @@ class WordGenerator(object):
     def __init__(
         self,
         augmentor: Union[Augmentor, bool] = False,
-        warehouses=["fonts", "block", "cursive"],
+        warehouses=["fonts", "block"],
         block_dataset_size: str = "sml",
     ):
         if isinstance(augmentor, Augmentor):
@@ -216,7 +216,7 @@ class WordGenerator(object):
             augmentor=self.augmentor, warehouses=warehouses, block_dataset_size=block_dataset_size
         )
 
-    def generate(self, text: str, augment_word: bool, spacer: Union[FixedSpacer, RandomSpacer] = FixedSpacer()) -> Word:
+    def generate(self, text: str, augment_word: bool = False, spacer: Union[FixedSpacer, RandomSpacer] = FixedSpacer()) -> Word:
         """Generates a Word from the requested text and spacing strategy, it will then apply any augmentations requested"""
         if "cursive" in self.chargen.warehouses:
             raise Exception(
